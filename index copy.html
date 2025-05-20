@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Abhinay Kanaparthi | Data Analyst Portfolio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- Google Fonts for modern typography -->
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+	<!-- Font Awesome for icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+	<style>
+		body {
+			margin: 0;
+			font-family: 'Roboto', Arial, sans-serif;
+			background: linear-gradient(120deg, #f8fafc 0%, #e0e7ef 100%);
+			color: #222;
+		}
+		#wrapper {
+			max-width: 1100px;
+			margin: 40px auto;
+			background: #fff;
+			border-radius: 18px;
+			box-shadow: 0 8px 32px rgba(60, 60, 120, 0.15);
+			overflow: hidden;
+		}
+		#intro {
+			display: flex;
+			align-items: center;
+			gap: 40px;
+			padding: 48px 48px 24px 48px;
+			background: linear-gradient(90deg, #4f8cff 0%, #6ee7b7 100%);
+			color: #fff;
+		}
+		#intro img {
+			border-radius: 50%;
+			width: 160px;
+			height: 160px;
+			object-fit: cover;
+			border: 5px solid #fff;
+			box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+		}
+		#intro h1 {
+			font-family: 'Montserrat', sans-serif;
+			font-size: 2.6rem;
+			margin: 0 0 10px 0;
+			letter-spacing: 1px;
+		}
+		#intro p {
+			font-size: 1.1rem;
+			margin: 0 0 18px 0;
+			line-height: 1.6;
+		}
+		.actions .button {
+			background: #fff;
+			color: #4f8cff;
+			border: none;
+			padding: 12px 28px;
+			border-radius: 30px;
+			font-weight: 700;
+			font-size: 1rem;
+			box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+			cursor: pointer;
+			transition: background 0.2s, color 0.2s;
+		}
+		.actions .button:hover {
+			background: #4f8cff;
+			color: #fff;
+		}
+		header#header {
+			background: #fff;
+			padding: 18px 48px;
+			border-bottom: 1px solid #e5e7eb;
+		}
+		header#header .logo {
+			font-family: 'Montserrat', sans-serif;
+			font-size: 1.3rem;
+			color: #4f8cff;
+			letter-spacing: 2px;
+			font-weight: 700;
+		}
+		nav#nav {
+			background: #f3f6fa;
+			padding: 0 48px;
+			border-bottom: 1px solid #e5e7eb;
+		}
+		nav#nav ul.links {
+			display: flex;
+			gap: 32px;
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		nav#nav ul.links li a {
+			color: #222;
+			font-weight: 500;
+			text-decoration: none;
+			padding: 18px 0;
+			display: block;
+			transition: color 0.2s;
+		}
+		nav#nav ul.links li a:hover {
+			color: #4f8cff;
+		}
+		#main {
+			padding: 40px 48px;
+		}
+		.post.featured {
+			background: #f8fafc;
+			border-radius: 14px;
+			margin-bottom: 36px;
+			box-shadow: 0 2px 12px rgba(79,140,255,0.07);
+			overflow: hidden;
+			display: flex;
+			gap: 32px;
+			align-items: center;
+		}
+		.post.featured .image.main img {
+			width: 260px;
+			height: 180px;
+			object-fit: cover;
+			border-radius: 12px;
+			box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+		}
+		.post.featured header.major {
+			flex: 1;
+		}
+		.post.featured h2 {
+			font-family: 'Montserrat', sans-serif;
+			font-size: 1.5rem;
+			margin: 0 0 10px 0;
+			color: #4f8cff;
+		}
+		.post.featured p {
+			font-size: 1rem;
+			color: #333;
+		}
+		.actions.special .button.large {
+			margin-top: 10px;
+			font-size: 1rem;
+			padding: 10px 24px;
+		}
+		section.posts {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+			gap: 32px;
+			margin-top: 32px;
+		}
+		section.posts article {
+			background: #fff;
+			border-radius: 12px;
+			box-shadow: 0 2px 12px rgba(79,140,255,0.06);
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+			transition: transform 0.15s;
+		}
+		section.posts article:hover {
+			transform: translateY(-6px) scale(1.02);
+			box-shadow: 0 8px 24px rgba(79,140,255,0.13);
+		}
+		section.posts .image.fit img {
+			width: 100%;
+			height: 180px;
+			object-fit: cover;
+		}
+		section.posts h2 {
+			font-size: 1.1rem;
+			color: #4f8cff;
+			margin: 18px 0 8px 0;
+			font-family: 'Montserrat', sans-serif;
+		}
+		section.posts p {
+			font-size: 0.98rem;
+			color: #444;
+			margin: 0 0 16px 0;
+			padding: 0 18px;
+		}
+		section.posts .actions.special {
+			margin: 0 0 18px 18px;
+		}
+		footer#footer {
+			background: #f3f6fa;
+			padding: 36px 48px;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 48px;
+			border-top: 1px solid #e5e7eb;
+		}
+		footer#footer section {
+			min-width: 180px;
+		}
+		footer#footer h3 {
+			font-size: 1.1rem;
+			color: #4f8cff;
+			margin-bottom: 8px;
+		}
+		footer#footer a {
+			color: #222;
+			text-decoration: none;
+			transition: color 0.2s;
+		}
+		footer#footer a:hover {
+			color: #4f8cff;
+		}
+		.icons.alt {
+			display: flex;
+			gap: 16px;
+			margin-top: 8px;
+		}
+		.icons.alt a {
+			font-size: 1.5rem;
+			color: #4f8cff;
+			background: #fff;
+			border-radius: 50%;
+			padding: 8px;
+			box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+			transition: background 0.2s, color 0.2s;
+		}
+		.icons.alt a:hover {
+			background: #4f8cff;
+			color: #fff;
+		}
+		#copyright {
+			text-align: center;
+			padding: 18px 0;
+			font-size: 0.95rem;
+			color: #888;
+			background: #fff;
+		}
+		@media (max-width: 900px) {
+			#intro, #main, header#header, nav#nav, footer#footer {
+				padding-left: 18px;
+				padding-right: 18px;
+			}
+			.post.featured {
+				flex-direction: column;
+				gap: 18px;
+			}
+			.post.featured .image.main img {
+				width: 100%;
+				height: 180px;
+			}
+		}
+		@media (max-width: 600px) {
+			#intro {
+				flex-direction: column;
+				gap: 18px;
+				padding: 24px 12px;
+				text-align: center;
+			}
+			#main {
+				padding: 18px 8px;
+			}
+			footer#footer {
+				flex-direction: column;
+				gap: 18px;
+				padding: 18px 8px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<!-- Intro -->
+		<div id="intro">
+			<img src="images/Abhi.jpeg" alt="Abhinay Kanaparthi">
+			<div>
+				<h1>Abhinay Kanaparthi<br><span style="font-size:1.2rem;font-weight:400;">Data Analyst</span></h1>
+				<p>
+					Experienced Data Analyst with a strong background in data science and business analytics. Skilled in delivering actionable insights through descriptive, diagnostic, and predictive analytics, with proven expertise in extracting and analyzing complex data sets. Successfully led projects involving real-time tweet analysis and stock price statistical analysis, driving informed business decisions. Eager to leverage analytical skills to contribute to data-driven strategies and solutions.
+				</p>
+				<div class="actions">
+					<a class="button icon solid fa-arrow-down" href="#main">Continue</a>
+				</div>
+			</div>
+		</div>
+		<!-- Header -->
+		<header id="header">
+			<span class="logo">INITIATIVES</span>
+		</header>
+		<!-- Nav -->
+		<nav id="nav">
+			<ul class="links">
+				<li><a href="#main">Projects</a></li>
+				<li><a href="Skills copy.html">Skills</a></li>
+				<li><a href="Experience copy.html">Experience</a></li>
+			</ul>
+		</nav>
+		<!-- Main -->
+		<div id="main">
+			<!-- Featured Projects -->
+			<article class="post featured">
+				<div class="image main">
+					<img src="images/Webscraping.jpeg" alt="Web Scraping Automation">
+				</div>
+				<header class="major">
+					<h2>Web Scraping Automation &amp; AWS S3</h2>
+					<p>
+						Automated web scraping for 1,000+ URLs, extracting JSON data and integrating AWS S3 for seamless cloud storage. Led a team to modernize data pipelines, reducing manual intervention by 30%. Designed a Gradio interface for user-friendly input and real-time status. Achieved a 25% boost in processing speed and system efficiency.
+					</p>
+					<div class="actions special">
+						<a href="https://github.com/Abhinaykanaparthi007/Data-Science-/tree/main/Web%20Scraping%20Automation%20and%20AWS%20S3%20Integration" class="button large">Full Project</a>
+					</div>
+				</header>
+			</article>
+			<article class="post featured">
+				<div class="image main">
+					<img src="images/numerology-report.jpg" alt="Numerology Analysis">
+				</div>
+				<header class="major">
+					<h2>Comprehensive Numerology Analysis</h2>
+					<p>
+						Developed an advanced app for personalized numerology reports using user data. Implemented robust algorithms for Life Path, Expression, and Soul Urge Numbers. Built a Gradio interface for easy input and downloadable reports. Enhanced performance and user experience through continuous feedback.
+					</p>
+					<div class="actions special">
+						<a href="https://github.com/Abhinaykanaparthi007/Data-Science-/tree/main/Comprehensive%20Numerology%20Report" class="button large">Full Project</a>
+					</div>
+				</header>
+			</article>
+			<!-- Other Projects -->
+			<section class="posts">
+				<article>
+					<a href="https://github.com/Abhinaykanaparthi007/Data-Science-/tree/main/Pima_diabetes" class="image fit"><img src="images/Pima diabetes.png" alt="Pima Diabetes"></a>
+					<h2>Pima Diabetes Classification</h2>
+					<p>
+						Machine learning classification of diabetes in the Pima Indian population using Logistic Regression, Decision Trees, SVM, and Random Forest. Evaluated models for accuracy and explored strategies for improved prediction.
+					</p>
+					<div class="actions special">
+						<a href="https://github.com/Abhinaykanaparthi007/Data-Science-/tree/main/Pima_diabetes" class="button">Full Project</a>
+					</div>
+				</article>
+				<article>
+					<a href="#" class="image fit"><img src="images/Real-time tweet.png" alt="Real-Time Sentiment"></a>
+					<h2>Real-Time Sentiment Analysis of Social Media</h2>
+					<p>
+						Real-time collection and sentiment analysis of tweets on the Russia-Ukraine conflict. Used Hadoop, AWS S3, and PowerBI for data processing and visualization, providing actionable insights into public sentiment.
+					</p>
+					<div class="actions special">
+						<a href="#" class="button">Full Project</a>
+					</div>
+				</article>
+				<article>
+					<a href="#" class="image fit"><img src="images/Stock trend.jpg" alt="StockTrend Analytics"></a>
+					<h2>StockTrend Analytics: Navigating Market Movements</h2>
+					<p>
+						Statistical analysis of stock data for Microsoft, Apple, and Tesla (2018-2023). Identified trends, volatility, and risk profiles to guide tailored investment strategies.
+					</p>
+					<div class="actions special">
+						<a href="#" class="button">Full Project</a>
+					</div>
+				</article>
+				<article>
+					<a href="https://github.com/Abhinaykanaparthi007/Data-Science-/tree/main/Application%20of%20Neural%20network%20in%20Image%20clasification" class="image fit"><img src="images/Minst.png" alt="Neural Network MNIST"></a>
+					<h2>Neural Network in Image Classification</h2>
+					<p>
+						Image classification using neural networks on the MNIST dataset. Improved accuracy over previous research using advanced machine learning modules in Jupyter Notebook.
+					</p>
+					<div class="actions special">
+						<a href="https://github.com/Abhinaykanaparthi007/Data-Science-/tree/main/Application%20of%20Neural%20network%20in%20Image%20clasification" class="button">Full Story</a>
+					</div>
+				</article>
+				<article>
+					<a href="#" class="image fit"><img src="images/Home automation system.png" alt="IoT Home Automation"></a>
+					<h2>IoT-Based Home Automation System</h2>
+					<p>
+						Led development of a smart home system using Raspberry Pi and Amazon Echo Dot. Enabled voice and web-based control of appliances, making smart homes accessible and user-friendly.
+					</p>
+				</article>
+				<article>
+					<a href="#" class="image fit"><img src="images/Securebanking system.png" alt="Secure Locker System"></a>
+					<h2>Secure Locker System Design</h2>
+					<p>
+						Designed a secure banking locker system with RFID and fingerprint authentication. Developed a robust, user-friendly two-step authentication process, setting new benchmarks in banking security.
+					</p>
+				</article>
+			</section>
+		</div>
+		<!-- Footer -->
+		<footer id="footer">
+			<section>
+				<h3>Address</h3>
+				<p>Fredericksburg, VA 22405</p>
+			</section>
+			<section>
+				<h3>Phone</h3>
+				<p><a href="tel:2676487004">(267) 648-7004</a></p>
+			</section>
+			<section>
+				<h3>Email</h3>
+				<p><a href="mailto:Abhinay.kanap@gmail.com">Abhinay.kanap@gmail.com</a></p>
+			</section>
+			<section>
+				<h3>Social</h3>
+				<div class="icons alt">
+					<a href="https://github.com/Abhinaykanaparthi007" class="fa-brands fa-github" title="GitHub"></a>
+					
+				</div>
+			</section>
+		</footer>
+		<!-- Copyright -->
+		<div id="copyright">
+			<ul style="list-style:none;padding:0;margin:0;">
+				<li>&copy; Abhinay Kanaparthi</li>
+				<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
