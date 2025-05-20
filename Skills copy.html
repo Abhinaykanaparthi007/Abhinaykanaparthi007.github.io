@@ -1,0 +1,295 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Abhinay's Skills</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!-- Google Fonts: Modern, clean, professional -->
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+	<!-- Font Awesome for icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+	<style>
+		:root {
+			--primary: #4f8cff;
+			--accent: #222;
+			--bg: #f7faff;
+			--card-bg: #fff;
+			--shadow: 0 4px 24px rgba(79,140,255,0.10);
+			--radius: 1.2em;
+			--font-main: 'Inter', 'Montserrat', Arial, sans-serif;
+		}
+		html, body {
+			background: var(--bg);
+			color: var(--accent);
+			font-family: var(--font-main);
+			margin: 0;
+			padding: 0;
+		}
+		#wrapper {
+			max-width: 900px;
+			margin: 40px auto 0 auto;
+			background: var(--card-bg);
+			border-radius: var(--radius);
+			box-shadow: var(--shadow);
+			padding: 2.5em 2em 2em 2em;
+		}
+		#header {
+			text-align: center;
+			margin-bottom: 2em;
+		}
+		#header .logo {
+			font-size: 2.5em;
+			font-weight: 700;
+			color: var(--primary);
+			letter-spacing: 0.04em;
+			text-decoration: none;
+			font-family: 'Montserrat', var(--font-main);
+			display: inline-block;
+			transition: color 0.2s;
+		}
+		#header .logo:hover {
+			color: #1a5edb;
+		}
+		#nav {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 2.5em;
+		}
+		#nav ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			gap: 2em;
+		}
+		#nav li {
+			display: inline-block;
+		}
+		#nav a {
+			text-decoration: none;
+			color: #555;
+			font-weight: 600;
+			font-size: 1.1em;
+			padding: 0.4em 1.2em;
+			border-radius: 2em;
+			transition: background 0.2s, color 0.2s;
+		}
+		#nav .active a, #nav a:hover {
+			background: var(--primary);
+			color: #fff;
+		}
+		#main {
+			font-family: var(--font-main);
+			letter-spacing: 0.01em;
+		}
+		.card {
+			background: var(--card-bg);
+			border-radius: var(--radius);
+			box-shadow: 0 2px 12px rgba(79,140,255,0.08);
+			padding: 2em 2em 1.5em 2em;
+			margin-bottom: 2em;
+			transition: box-shadow 0.2s, transform 0.2s;
+			position: relative;
+			overflow: hidden;
+		}
+		.card:hover {
+			box-shadow: 0 8px 32px rgba(79,140,255,0.18);
+			transform: translateY(-4px) scale(1.01);
+		}
+		.card .main-image {
+			text-align: center;
+			margin-bottom: 1.5em;
+		}
+		.card .main-image img {
+			max-width: 80%;
+			border-radius: 1em;
+			box-shadow: 0 2px 16px rgba(79,140,255,0.10);
+		}
+		.about-header {
+			display: flex;
+			align-items: center;
+			gap: 0.7em;
+			font-size: 1.7em;
+			font-weight: 700;
+			color: var(--primary);
+			font-family: 'Montserrat', var(--font-main);
+			margin-bottom: 0.3em;
+		}
+		.about-desc {
+			font-size: 1.13em;
+			line-height: 1.7;
+			color: #444;
+			margin-bottom: 2em;
+		}
+		.skills-table {
+			width: 100%;
+			border-collapse: separate;
+			border-spacing: 0 0.7em;
+			margin-top: 1.2em;
+		}
+		.skills-table td {
+			vertical-align: top;
+			padding: 0.5em 0.3em;
+			font-size: 1.08em;
+		}
+		.skills-table td:first-child {
+			font-weight: bold;
+			color: var(--primary);
+			min-width: 210px;
+			font-family: 'Montserrat', var(--font-main);
+			display: flex;
+			align-items: center;
+			gap: 0.5em;
+		}
+		.skills-table td:last-child {
+			color: #222;
+		}
+		/* Icon styles for skills */
+		.fa-fw {
+			width: 1.2em;
+			text-align: center;
+		}
+		/* Education Section */
+		.education-header {
+			display: flex;
+			align-items: center;
+			gap: 0.7em;
+			font-size: 1.3em;
+			font-weight: 700;
+			color: var(--primary);
+			font-family: 'Montserrat', var(--font-main);
+			margin-bottom: 1em;
+		}
+		.edu-entry {
+			margin-bottom: 1.2em;
+			padding-bottom: 1em;
+			border-bottom: 1px solid #ececec;
+		}
+		.edu-entry:last-child {
+			border-bottom: none;
+		}
+		.edu-title {
+			font-weight: bold;
+			color: #222;
+			font-size: 1.1em;
+		}
+		.edu-date {
+			float: right;
+			color: #888;
+			font-size: 0.98em;
+			font-weight: 500;
+		}
+		.edu-degree {
+			font-style: italic;
+			color: #555;
+			font-size: 1em;
+		}
+		/* Decorative accent bar */
+		.card::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 6px;
+			height: 100%;
+			background: linear-gradient(180deg, var(--primary) 0%, #b8d6ff 100%);
+			border-radius: 6px 0 0 6px;
+		}
+		@media (max-width: 700px) {
+			#wrapper {
+				padding: 1em 0.5em;
+			}
+			.card {
+				padding: 1.2em 0.7em 1em 1.2em;
+			}
+			#header .logo {
+				font-size: 1.5em;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<!-- Header -->
+		<header id="header">
+			<a href="Skills copy.html" class="logo"><i class="fa-solid fa-brain"></i> My Skills &amp; Expertise in Data Science</a>
+		</header>
+		<!-- Nav -->
+		<nav id="nav">
+			<ul class="links">
+				<li><a href="index.html"><i class="fa-solid fa-diagram-project"></i> Projects</a></li>
+				<li class="active"><a href="Skills copy.html"><i class="fa-solid fa-brain"></i> Skills</a></li>
+				<li><a href="Experience copy.html"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
+			</ul>
+		</nav>
+		<!-- Main Card -->
+		<section id="main">
+			<div class="card">
+				<div class="main-image">
+					<img src="images/linkedin cover.png" alt="LinkedIn Cover" />
+				</div>
+				<div class="about-header">
+					<i class="fa-solid fa-user-astronaut"></i> About Me
+				</div>
+				<div class="about-desc">
+					As a Data Scientist, I have a strong foundation in data analysis, machine learning, and data visualization. I am proficient in programming languages such as Python and R, and have experience with various data analysis tools and libraries. My expertise includes predictive modeling, sentiment analysis, and image classification. I am also skilled in database management and have experience with SQL and NoSQL databases. I am passionate about using data to drive business decisions and improve processes.
+				</div>
+				<table class="skills-table">
+					<tr>
+						<td><i class="fa-solid fa-code fa-fw"></i> Coding Languages:</td>
+						<td>Python, R Programming, SQL, C, C++, Java</td>
+					</tr>
+					<tr>
+						<td><i class="fa-solid fa-database fa-fw"></i> Database Management:</td>
+						<td>MySQL, PostgreSQL, MongoDB, Oracle</td>
+					</tr>
+					<tr>
+						<td><i class="fa-solid fa-chart-pie fa-fw"></i> Data Visualization:</td>
+						<td>Tableau, Power BI, Matplotlib, Seaborn</td>
+					</tr>
+					<tr>
+						<td><i class="fa-solid fa-magnifying-glass-chart fa-fw"></i> Data Analysis:</td>
+						<td>Descriptive Analytics, Predictive Modelling, Sentiment Analysis, Image Classification</td>
+					</tr>
+					<tr>
+						<td><i class="fa-solid fa-toolbox fa-fw"></i> Data Mining Tools:</td>
+						<td>Tableau, Knime, PowerBI</td>
+					</tr>
+					<tr>
+						<td><i class="fa-solid fa-robot fa-fw"></i> Machine Learning:</td>
+						<td>R-Studio, Spark (Spark, PySpark), Jupyter Notebook, TensorFlow, Keras, Pytorch, Scikit-Learn, Pandas, NumPy, Matplotlib, Seaborn, AWS (EC2, S3, Sage maker, EMR)</td>
+					</tr>
+					<tr>
+						<td><i class="fa-solid fa-wrench fa-fw"></i> Tools / Utilities:</td>
+						<td>PyCharm, Data Grip, PL/SQL Developer, JIRA, Alteryx, GitHub, Anaconda Distribution, VirtualBox, Docker</td>
+					</tr>
+					<tr>
+						<td><i class="fa-solid fa-diagram-project fa-fw"></i> Development Methodologies:</td>
+						<td>Agile, Scrum, Waterfall</td>
+					</tr>
+					<tr>
+						<td><i class="fa-solid fa-industry fa-fw"></i> Domain Experience:</td>
+						<td>Retail, Health Care, Education</td>
+					</tr>
+				</table>
+			</div>
+			<!-- Education Section -->
+			<div class="card">
+				<div class="education-header">
+					<i class="fa-solid fa-graduation-cap"></i> Education
+				</div>
+				<div class="edu-entry">
+					<span class="edu-title">University of South Wales, UK</span>
+					<span class="edu-date">Sep 2020 – Sep 2021</span><br>
+					<span class="edu-degree">MSc Data Science</span>
+				</div>
+				<div class="edu-entry">
+					<span class="edu-title">Malla Reddy College of Engineering and Technology, Hyderabad, India</span>
+					<span class="edu-date">Jul 2016 – Aug 2020</span><br>
+					<span class="edu-degree">Bachelor of Science in Electronics and Communication Engineering</span>
+				</div>
+			</div>
+		</section>
+	</div>
+</body>
+</html>
